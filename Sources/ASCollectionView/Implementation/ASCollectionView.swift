@@ -506,6 +506,8 @@ public struct ASCollectionView<SectionID: Hashable>: UIViewControllerRepresentab
 
 		func applyScrollPosition(animated: Bool)
 		{
+      guard hasDoneInitialSetup else { return }
+      
 			if let scrollPositionToSet = parent.scrollPositionSetter?.wrappedValue
 			{
 				scrollToPosition(scrollPositionToSet, animated: animated)
