@@ -78,7 +78,6 @@ public struct ASCollectionView<SectionID: Hashable>: UIViewControllerRepresentab
 		context.coordinator.collectionViewController = collectionViewController
 		context.coordinator.delegate = delegate
 		context.coordinator.setupDataSource(forCollectionView: collectionViewController.collectionView)
-    context.coordinator.applyScrollPosition(animated: false)
 
 		return collectionViewController
 	}
@@ -364,6 +363,7 @@ public struct ASCollectionView<SectionID: Hashable>: UIViewControllerRepresentab
 
 			hasDoneInitialSetup = true
 			populateDataSource(animated: false)
+      applyScrollPosition(animated: false)
 		}
 
 		func onMoveFromParent() {}
